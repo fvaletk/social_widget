@@ -1,7 +1,13 @@
+/** Dependencies */
 import React, { Component } from 'react';
+
+/** Assets */
 import logo from './logo.svg';
+
+/** Styles */
 import './App.css';
 
+/** Component */
 class App extends Component {
   render() {
     return (
