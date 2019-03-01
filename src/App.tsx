@@ -7,12 +7,22 @@ import './App.css';
 /** Components */
 import { Posts } from './components';
 
+/** Constants */
+const url = "http://api.massrelevance.com/MassRelDemo/kindle.json";
+const amount = 25;
+const interval = 15000;
+
 class App extends Component {
   render() {
     return (
-      <Posts></Posts>
+      <Posts
+        url={url}
+        amount={amount}
+        interval={interval}
+      >
+      </Posts>
     );
   }
-}
+};
 
 export default App;
