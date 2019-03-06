@@ -6,12 +6,12 @@ import './Post.css';
 
 /** Props */
 type Props = {
-  info: object
+  info: any
 };
 
 export class Post extends Component<Props> {
   render() {
-    return(
+    return (
       <p>Hello from posts</p>
     )
   }
