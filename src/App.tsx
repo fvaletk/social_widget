@@ -8,7 +8,8 @@ import './App.css';
 import { Posts } from './components';
 
 /** Constants */
-const url = "http://api.massrelevance.com/MassRelDemo/kindle.json";
+const url = "http://api.massrelevance.com/MassRelDemo/all-networks.json?network=twitter";
+// const url = "http://api.massrelevance.com/MassRelDemo/all-networks.json?network=facebook";
 const amount = 25;
 const interval = 15000;
 
