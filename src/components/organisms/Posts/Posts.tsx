@@ -2,25 +2,29 @@
 import React, { Component } from 'react';
 
 /** Services */
-import { fetchPosts } from './Posts.service';
+import { fetchPosts } from '../../../shared';
 
-/** Props */
+/** Partials */
+import { renderPostsFeed } from './partials';
+
+/** Types */
+type PostsResponse = IFacebookResponse | ITwitterResponse;
+
 type Props = {
   url: string,
   amount: number,
   interval: number
 }
 
-/** State */
 type State = {
   status: 'loading' | 'error' | 'done',
-  posts: any // TODO: Add Posts Interface
+  posts: Array<PostsResponse>
 }
 
 export class Posts extends Component<Props, State> {
   state: State = {
     status: 'loading',
-    posts: {}
+    posts: []
   }
   
   /** Lifecycle methods */
@@ -34,27 +38,12 @@ export class Posts extends Component<Props, State> {
     }
   }
 
-  /** Custom Methods */
-  // TODO: Add Posts Interface
-  renderContent(status: string, posts: any) {
-    switch (status) {
-      case 'loading':
-        return <p>Loading...</p>
-      case 'error':
-        return <p>Something went wrong...</p>
-      case 'done':
-        return <p>Number of Posts: {posts.length}</p>
-      default:
-        return <p>Something went wrong...</p>
-    }
-  }
-
   render(){
-    const { state, renderContent } = this;
+    const { state } = this;
     const { status, posts } = state;
 
     return (
-      renderContent(status, posts)
+      renderPostsFeed(status, posts)
     )
   }
 };
