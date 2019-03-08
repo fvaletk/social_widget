@@ -127,6 +127,7 @@ interface IFacebookFrom {
 }
 
 interface IPost {
+  id: string;
   profile_image_url: string;
   name: string;
   created_at: string;

@@ -8,8 +8,6 @@ import { fetchPosts } from '../../../shared';
 import { renderPostsFeed } from './partials';
 
 /** Types */
-type PostsResponse = IFacebookResponse | ITwitterResponse;
-
 type Props = {
   url: string,
   amount: number,
@@ -18,7 +16,7 @@ type Props = {
 
 type State = {
   status: 'loading' | 'error' | 'done',
-  posts: Array<PostsResponse>
+  posts: Array<IPost>
 }
 
 export class Posts extends Component<Props, State> {

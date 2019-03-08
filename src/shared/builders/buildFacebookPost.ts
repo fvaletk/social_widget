@@ -9,6 +9,7 @@ const getLink = (link: string | undefined) : string => {
   
   export const buildFacebookPost = (post: IFacebookResponse) : IPost => {
     return {
+      id: post.id,
       profile_image_url: getLink(post.link),
       name: post.from.name,
       created_at: post.created_time,
