@@ -1,15 +1,26 @@
 /** Dependencies */
 import React from 'react';
 
-/** Types */
-type PostsResponse = IFacebookResponse | ITwitterResponse;
+/** Style */
+import '../Posts.css';
+
+/** Molecules */
+import { Post } from '../../../molecules';
 
 /** Methods */
-const renderPosts = (posts: Array<PostsResponse>) => {
-  return <p>Number of posts {posts.length}</p>;
+const renderPosts = (posts: Array<IPost>) => {
+  return (
+    <ul className="Posts__list">
+      {
+        posts.map((post) => {
+          return <Post key={post.id} info={post}></Post>
+        })
+      }
+    </ul>
+  );
 };
 
-export const renderPostsFeed = (status: string, posts: Array<PostsResponse>) => {
+export const renderPostsFeed = (status: string, posts: Array<IPost>) => {
   switch (status) {
     case 'loading':
       return <p>Loading...</p>
